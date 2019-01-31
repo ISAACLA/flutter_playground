@@ -52,11 +52,12 @@ class _HomePageState extends State<PostsPage> {
         builder: (BuildContext context, Widget child, MainModel model) {
       if (model.postLoading) {
         Widget content = Container(
-          padding: EdgeInsets.all(20.0),
           child: Center(
             child: Container(
               padding: EdgeInsets.only(top: 60.0),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   CircularProgressIndicator(),
                   SizedBox(

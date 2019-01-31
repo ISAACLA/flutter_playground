@@ -6,6 +6,7 @@ class Comment {
   final String name;
   final String email;
   final String body;
+  bool isExpanded;
 
   Comment({
     @required this.postId,
@@ -13,5 +14,6 @@ class Comment {
     @required this.name,
     @required this.email,
     @required this.body,
+    this.isExpanded = false
   });
 }

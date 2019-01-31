@@ -44,6 +44,7 @@ class PostCard extends StatelessWidget {
         ),
         onTap: () {
           Navigator.pushNamed<bool>(context, '/post/' + post.id.toString());
-        });
+        },
+      );
   }
 }

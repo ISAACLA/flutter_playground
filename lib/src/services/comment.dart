@@ -18,11 +18,10 @@ mixin CommentsModel on Model {
   bool get commentLoading {
     return _commentLoading;
   }
-  
+
   List<Comment> get displayComments {
     return List.from(_comments);
   }
-  
 
   Future<dynamic> postComments(int id) async {
     _commentLoading = true;
@@ -64,7 +63,8 @@ mixin CommentsModel on Model {
     _commentLoading = true;
 
     try {
-      final http.Response response = await http.post(url + '/comments', body: json.encode(comment));
+      final http.Response response =
+          await http.post(url + '/comments', body: json.encode(comment));
       var responseData = json.decode(response.body);
 
       final Comment newComment = Comment(
@@ -80,7 +80,6 @@ mixin CommentsModel on Model {
 
       _comments.insert(0, newComment);
       notifyListeners();
-
     } catch (error) {
       _commentLoading = false;
       print('$error');

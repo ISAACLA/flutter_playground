@@ -1,7 +1,7 @@
 import 'package:scoped_model/scoped_model.dart';
 
 import 'post.dart';
-import 'event.dart';
+import 'task.dart';
 import 'comment.dart';
 
 mixin UiStateModel on Model {

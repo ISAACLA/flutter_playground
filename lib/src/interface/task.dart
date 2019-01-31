@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Event {
+class Task {
   final int userId;
   final int id;
   final String title;
   final bool completed;
 
-  Event({
+  Task({
     @required this.userId,
     @required this.id,
     @required this.title,

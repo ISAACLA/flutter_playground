@@ -3,7 +3,8 @@ import 'package:scoped_model/scoped_model.dart';
 
 import 'pages/auth/login.dart';
 import 'pages/posts/posts.dart';
-import 'pages/events/events.dart';
+import 'pages/tasks/tasks.dart';
+import 'pages/album/albums.dart';
 
 import 'widgets/post/post_show.dart';
 
@@ -34,7 +35,8 @@ class _MyAppState extends State<MyApp> {
           routes: {
             '/': (BuildContext context) => Login(),
             'home': (BuildContext context) => PostsPage(_model),
-            'events': (BuildContext context) => EventsPage(_model),
+            'events': (BuildContext context) => TasksPage(_model),
+            'albums': (BuildContext context) => AlbumsPage(_model)
           },
           onGenerateRoute: (RouteSettings settings) {
             final List<String> pathElements = settings.name.split('/');

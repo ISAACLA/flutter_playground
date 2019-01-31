@@ -20,7 +20,6 @@ class MyDrawer extends StatelessWidget {
                 leading: Icon(Icons.textsms),
                 title: Text('Posts'),
                 onTap: () {
-                  print('lets get some posts');
                   Navigator.pushReplacementNamed(context, 'home');
                 },
               ),
@@ -30,7 +29,9 @@ class MyDrawer extends StatelessWidget {
               ListTile(
                 leading: Icon(Icons.album),
                 title: Text('Albums'),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, 'albums');
+                },
               ),
               Divider(
                 color: Theme.of(context).primaryColor,
