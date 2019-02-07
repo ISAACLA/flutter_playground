@@ -30,7 +30,7 @@ mixin CommentsModel on Model {
       final http.Response response =
           await http.get(url + '/comments?postId=' + id.toString());
 
-      if (response.statusCode != 200 && response.statusCode != 201) {
+      if(response.statusCode != 200 && response.statusCode != 201) {
         return false;
       }
 

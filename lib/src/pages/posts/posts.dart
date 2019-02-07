@@ -54,7 +54,6 @@ class _HomePageState extends State<PostsPage> {
         Widget content = Container(
           child: Center(
             child: Container(
-              padding: EdgeInsets.only(top: 60.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,

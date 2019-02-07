@@ -38,7 +38,7 @@ class MyDrawer extends StatelessWidget {
               ),
               ListTile(
                 leading: Icon(Icons.event),
-                title: Text('Events'),
+                title: Text('Task'),
                 onTap: () {
                   Navigator.pushReplacementNamed(context, 'events');
                 },

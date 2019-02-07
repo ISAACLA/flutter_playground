@@ -33,7 +33,7 @@ mixin TasksModel on Model {
           userId: eventData['userId'],
           id: eventData['id'],
           title: eventData['title'],
-          completed: eventData['complted'],
+          completed: eventData['completed'],
         );
         eventDataList.insert(0, event);
       });

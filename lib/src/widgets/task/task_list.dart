@@ -12,10 +12,20 @@ class TasksList extends StatelessWidget {
           itemCount: model.allEvents.length,
           itemBuilder: (BuildContext context, int index) {
             return Card(
-              child: Container(
-                  padding: EdgeInsets.all(10.0),
-                  color: Colors.lightBlue,
-                  child: Text('${model.allEvents[index].title}')),
+              child: Row(
+                children: <Widget>[
+                  Checkbox(
+                    value: model.allEvents[index].completed,
+                    activeColor: Theme.of(context).primaryColor,
+                    onChanged: (bool value){
+                      print(model.allEvents[index].completed);
+                    },
+                  ),
+                  Expanded(
+                    child: Text(model.allEvents[index].title),
+                  )
+                ],
+              ),
             );
           },
         );
@@ -23,3 +33,11 @@ class TasksList extends StatelessWidget {
     );
   }
 }
+
+
+//Card(
+//child: Container(
+//padding: EdgeInsets.all(10.0),
+//color: Colors.lightBlue,
+//child: Text('${model.allEvents[index].title}')),
+//);
