@@ -15,18 +15,17 @@ class CommentCard extends StatefulWidget {
   }
 }
 
-class _CommentCardState extends State<CommentCard>{
-
+class _CommentCardState extends State<CommentCard> {
   @override
   void initState() {
-    print('comment, ${widget.comment.name}');
-    print('curerntiNdeex, ${widget.currentIndex}');
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    final String body = widget.comment.body.length > 60 ? widget.comment.body.substring(0, 60) : widget.comment.body;
+    final String body = widget.comment.body.length > 60
+        ? widget.comment.body.substring(0, 60)
+        : widget.comment.body;
 
 //    return Container(
 //      padding: EdgeInsets.symmetric(horizontal: 5.0),
@@ -64,37 +63,35 @@ class _CommentCardState extends State<CommentCard>{
 //    );
 
     return ScopedModelDescendant<MainModel>(
-      builder: (BuildContext context, Widget child, MainModel model){
+      builder: (BuildContext context, Widget child, MainModel model) {
         return Container(
-          margin: EdgeInsets.all(10.0),
-          child: ExpansionPanelList(
-            children: <ExpansionPanel>[
-              ExpansionPanel(
-                headerBuilder: (BuildContext context, bool isExpanded){
-                  isExpanded = widget.comment.isExpanded;
-                  return Text('name ${widget.comment.name}');
-                },
-                body: Container(
-                  color: Colors.red,
-                  padding: EdgeInsets.all(10.0),
-                  child: Text('body $body'),
-                ),
-                isExpanded: widget.comment.isExpanded
-              )
-            ],
-            expansionCallback: (int currentIndex, bool isExpanded){
-              setState(() {
-                print('here, $currentIndex');
-                model.displayComments[currentIndex].isExpanded = !model.displayComments[currentIndex].isExpanded;
-              });
-            },
-          )
-        );
+            margin: EdgeInsets.all(10.0),
+            child: ExpansionPanelList(
+              children: <ExpansionPanel>[
+                ExpansionPanel(
+                    headerBuilder: (BuildContext context, bool isExpanded) {
+                      isExpanded = widget.comment.isExpanded;
+                      return Text('name ${widget.comment.name}');
+                    },
+                    body: Container(
+                      color: Colors.red,
+                      padding: EdgeInsets.all(10.0),
+                      child: Text('body $body'),
+                    ),
+                    isExpanded: widget.comment.isExpanded)
+              ],
+              expansionCallback: (int currentIndex, bool isExpanded) {
+                setState(() {
+                  print('here, $currentIndex');
+                  model.displayComments[currentIndex].isExpanded =
+                      !model.displayComments[currentIndex].isExpanded;
+                });
+              },
+            ));
       },
     );
   }
 }
-
 
 //expansionCallback: (bool isExpanded) {
 //setState(() {
